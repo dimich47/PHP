@@ -67,3 +67,33 @@ PrintData('Исходный массив: ', $arrOld);
 array_multisort($arrSum, $arrOld);      // сортировка массивов
 PrintData('Исходный массив после сортиовки по сумме чисел: ', $arrOld);
 PrintData('Сумма чисел сортированного массива: ', $arrSum);
+
+echo '<br>','Задача 5', '<br>';
+//Написать функцию - конвертер строки (функция принимает на вход строку и функцию-преобразователь, возвращает преобразованную строку). Использовать анонимные функции. Возможности:
+//перевод всех символов в верхний регистр,
+//перевод всех символов в нижний регистр,
+//перевод всех символов в нижний регистр и первых символов слов в верхний регистр.
+
+function ConvertStrings($ConvertStr, $newFunc)
+{
+    return $newFunc($ConvertStr);
+}
+$myUp = function ($strUp)
+{
+    return strtoupper($strUp);
+};
+$myDown = function ($strDown)
+{
+    return strtolower($strDown);
+};
+
+$myUpDown = function ($strUpDown)
+{
+    $strUpDown = strtolower($strUpDown);
+    return ucwords($strUpDown);
+};
+
+
+
+echo ConvertStrings('мой текст в верхнем регистре', $myUp), '<br>';
+echo ConvertStrings("мой текст в НИЖНЕМ регистре", $myDown), '<br>';
