@@ -1,4 +1,7 @@
 <?php
+
+//setlocale(LC_ALL,'ru_Ru.utf8');
+
 echo 'Задача 1', '<br>';;
 $str1 = 'this_is_string';
 echo 'Было - ',$str1, '<br>';
@@ -95,5 +98,6 @@ $myUpDown = function ($strUpDown)
 
 
 
-echo ConvertStrings('мой текст в верхнем регистре', $myUp), '<br>';
-echo ConvertStrings("мой текст в НИЖНЕМ регистре", $myDown), '<br>';
+echo ConvertStrings('upper case', $myUp), '<br>';
+echo ConvertStrings("LOWER CASE ", $myDown), '<br>';
+echo ConvertStrings("upper and lower  ", $myUpDown), '<br>';
