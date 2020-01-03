@@ -36,7 +36,7 @@ function delete_dir($name_dir){
                 {
                    delete_dir($name_dir . '/' . $data);
                 }
-//            }
+            }
             closedir($dh);
         }
         echo "удалить  папку ". $name_dir .'<br>';

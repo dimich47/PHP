@@ -83,21 +83,21 @@ function ConvertStrings($ConvertStr, $newFunc)
 }
 $myUp = function ($strUp)
 {
-    return strtoupper($strUp);
+    return mb_strtoupper($strUp, "UTF-8");
 };
 $myDown = function ($strDown)
 {
-    return strtolower($strDown);
+    return mb_strtolower($strDown, "UTF-8");
 };
 
 $myUpDown = function ($strUpDown)
 {
-    $strUpDown = strtolower($strUpDown);
-    return ucwords($strUpDown);
+    $strUpDown = mb_strtolower($strUpDown, "UTF-8");
+    return mb_convert_case($strUpDown, MB_CASE_TITLE, "UTF-8");
 };
 
 
 
-echo ConvertStrings('upper case', $myUp), '<br>';
-echo ConvertStrings("LOWER CASE ", $myDown), '<br>';
-echo ConvertStrings("upper and lower  ", $myUpDown), '<br>';
+echo ConvertStrings('верхниЙ Регистр', $myUp), '<br>';
+echo ConvertStrings("НИЖНИЙ регистр ", $myDown), '<br>';
+echo ConvertStrings("нИЖНИЙ с заглавныМИ  ", $myUpDown), '<br>';
